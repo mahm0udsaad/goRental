@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #f7f7f7;
+}
+.hero {
+  margin: 0;
+  padding: 0;
+  background: url('/Hero 3.png') center/cover no-repeat; /* Replace '/Hero 3.png' with the actual path to your image */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-shadow{
+  box-shadow:-10px 4px 16px 3px #20de8c, 0pc -4px 9px 5px #ff00de;
+}
+.text-gradient{
+  /* background-clip: text; */
+  background: -webkit-linear-gradient(left, #2023de, #2072de);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
