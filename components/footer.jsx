@@ -3,7 +3,7 @@ import { FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
 
 const Footer = () => {
   return (
-    <div className="bg-slate-700 flex flex-col w-full items-center mt-20 pt-12 pb-5 px-5 rounded-[45px] max-md:max-w-full max-md:mt-10">
+    <div className="bg-slate-700 flex flex-col w-full items-center mt-20 pt-12 pb-5 px-5 rounded-t-2xl max-md:max-w-full max-md:mt-10">
       <div className="flex flex-col items-center max-md:mt-14 max-md:mb-8">
         <div className="flex flex-col md:flex-row w-full md:justify-between items-center gap-5 max-md:flex-wrap">
           <div className="text-zinc-100 text-base font-medium leading-6">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import * as React from "react";
-import { WebsiteNavBar } from "./navBar";
+import { WebsiteNavBar } from "./websiteNavBar";
 import FeatureList from "./features";
 import Footer from "./footer";
 
@@ -17,7 +17,7 @@ export default function HomePage() {
                 <div className="text-zinc-900 text-2xl sm:text-5xl font-extrabold sm:leading-[66px] w-full">
                     Drive Efficiency Navigate Success Your Journey Our System.
                 </div>
-                <Link href={'/signup'} className="hover:bg-white hover:text-[#334155] border border-[#334155] transition text-white text-center text-lg font-bold leading-6 whitespace-nowrap justify-center items-center bg-slate-700 w-[197px] max-w-full mt-28 px-5 py-4 rounded-xl self-start max-md:mt-10">
+                <Link href={'/sign-up'} className="hover:bg-white hover:text-[#334155] border border-[#334155] transition text-white text-center text-lg font-bold leading-6 whitespace-nowrap justify-center items-center bg-slate-700 w-[197px] max-w-full mt-28 px-5 py-4 rounded-xl self-start max-md:mt-10">
                     Join now
                 </Link>
                 </div>
@@ -35,7 +35,7 @@ export default function HomePage() {
       </div>
       <div className="self-stretch flex w-full flex-col items-stretch max-md:max-w-full">
         <div className="flex flex-col items-center ml-4 px-0 sm:px-5 py-12 max-md:max-w-full">
-          <div className="w-full mt-20 mb-14 max-md:max-w-full">
+          <div className="w-11/12 xl:max-w-5/6 mx-auto mt-20 mb-14 max-md:max-w-full">
             <div className="gap-5 sm:flex sm:flex-row flex-col">
               <div className="flex flex-col items-stretch sm:w-[48%]">
                 <div className="flex flex-col my-auto max-md:max-w-full max-md:mt-10">
