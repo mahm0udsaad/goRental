@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 body{
   background-color: #f7f7f7;
 }
@@ -16,18 +19,21 @@ body{
 }
 
 .hero-shadow {
-  animation: shadowAnimation 3s ease ;
+  animation: shadowAnimation 3s ease infinite;
   box-shadow: -5px 4px 37px 3px #20de8c, 0px -1px 25px 2px #ff00de;
 }
 .text-gradient{
   /* background-clip: text; */
   background: -webkit-linear-gradient(left, #2023de, #2072de);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .dash{
   background-color: #253665;
   height: 100dvh;
+}
+.btn :hover{
+  background-color: #9b9b9b69;
 }
 @keyframes shadowAnimation {
   0% {

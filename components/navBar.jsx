@@ -4,7 +4,6 @@ import ToggleableNavBar from "./toggleableNav";
 
 const NavBar = async () => {
   const user = await currentUser()
-
   return (
     <>
     <ToggleableNavBar />
