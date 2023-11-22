@@ -8,7 +8,7 @@ export const BarChart = () => {
   const chartInstance = useRef(null);
 
   const generateRandomData = () => {
-    return Array.from({ length: 6 }, () => Math.floor(Math.random() * 100));
+    return Array.from({ length: 8 }, () => Math.floor(Math.random() * 100));
   };
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export const BarChart = () => {
       chartInstance.current = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+          labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6','Week 7','Week 8'],
           datasets: [{
             label: '# of Revenues',
             data: generateRandomData(),
@@ -53,7 +53,7 @@ export const BarChart = () => {
   return (
     <div className="w-5/6 h-60">
       <h1 className='text-lg'>Revenues</h1>
-      <canvas ref={chartRef} id="myChart" width="200" height="100"></canvas>
+      <canvas ref={chartRef} id="myChart" width="650" height="300"></canvas>
     </div>
   );
 };
@@ -155,6 +155,69 @@ export const LineChart = () => {
   }, []);
 
   return (
-      <canvas ref={chartRef} id="myChart" width="200" height="100"></canvas>
+      <canvas ref={chartRef} id="myChart" width="200" height="150"></canvas>
+  );
+};
+export const TotalSummaryChart = () => {
+  const chartRef = useRef(null);
+  const chartInstance = useRef(null);
+
+  useEffect(() => {
+    if (chartRef && chartRef.current) {
+      const ctx = chartRef.current.getContext('2d');
+
+      if (chartInstance.current) {
+        chartInstance.current.destroy();
+      }
+
+      const data = {
+        labels: ['Total Vehicles', 'Total Rental Frequency'],
+        datasets: [
+          {
+            label: 'Total Summary',
+            data: [TotalSummary.TotalVehicles, TotalSummary.TotalRentalFrequency],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.6)', // Color for Total Vehicles
+              'rgba(54, 162, 235, 0.6)', // Color for Total Rental Frequency
+            ],
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      chartInstance.current = new Chart(ctx, {
+        type: 'pie',
+        data: data,
+        options: {
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Total Summary',
+              font: { size: 18 },
+            },
+            legend: {
+              display: true,
+              position: 'bottom',
+              labels: {
+                font: { size: 14 },
+              },
+            },
+          },
+        },
+      });
+    }
+
+    return () => {
+      if (chartInstance.current) {
+        chartInstance.current.destroy();
+      }
+    };
+  }, [TotalSummary]);
+
+  return (
+    <div className="w-full">
+      <canvas ref={chartRef} id="myChart" width="200" height="280"></canvas>
+    </div>
   );
 };

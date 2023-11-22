@@ -177,7 +177,6 @@ export const Contracts = [
     "Time In": "22:22",
     "Date In": "27/07/2023",
     "Return Status": "اعادة",
-    "Invoice Details": "تفاصيل الفاتورة"
 },
 {
     "id": "5",
@@ -195,7 +194,6 @@ export const Contracts = [
     "Time In": "20:38",
     "Date In": "15/07/2023",
     "Return Status": "اعادة",
-    "Invoice Details": "تفاصيل الفاتورة"
 },
 {
     "id": "6",
@@ -213,7 +211,6 @@ export const Contracts = [
     "Time In": "14:56",
     "Date In": "15/07/2023",
     "Return Status": "اعادة",
-    "Invoice Details": "تفاصيل الفاتورة"
 },
 {
     "id": "7",
@@ -231,7 +228,6 @@ export const Contracts = [
     "Time In": "17:05",
     "Date In": "14/07/2023",
     "Return Status": "اعادة",
-    "Invoice Details": "تفاصيل الفاتورة"
 }, 
 {
     "id": "8",
@@ -249,7 +245,6 @@ export const Contracts = [
     "Time In": "17:03",
     "Date In": "14/07/2023",
     "Return Status": "اعادة",
-    "Invoice Details": "تفاصيل الفاتورة"
     },
     {
     "id": "9",
@@ -267,7 +262,6 @@ export const Contracts = [
     "Time In": "19:11",
     "Date In": "13/07/2023",
     "Return Status": "اعادة",
-    "Invoice Details": "تفاصيل الفاتورة"
     },
     {
     "id": "10",
@@ -285,7 +279,6 @@ export const Contracts = [
     "Time In": "09:48",
     "Date In": "13/07/2023",
     "Return Status": "اعادة",
-    "Invoice Details": "تفاصيل الفاتورة"
     }
 ]
 export const Customers = [
@@ -504,7 +497,7 @@ export const RentalExport = [
     "PlateNumber": "A S R 1294 ا س ر",
     "ManufacturerModel": "Unknown",
     "Branch": "الفرع الرئيسي",
-    "RentalFrequency": 4
+    "RentalFrequency": 5
     },
     {
     "PlateNumber": "R S L 8653 ر س ل",
@@ -516,8 +509,14 @@ export const RentalExport = [
     "PlateNumber": "R S L 8645 ر س ل",
     "ManufacturerModel": "Unknown",
     "Branch": "الفرع الرئيسي",
-    "RentalFrequency": 4
+    "RentalFrequency": 3
     },
+    {
+        "PlateNumber": "R S L 8645 ر س ل",
+        "ManufacturerModel": "Unknown",
+        "Branch": "الفرع الرئيسي",
+        "RentalFrequency": 2
+        },
 ]
 export const BranchStatistics= [
     {
@@ -530,10 +529,6 @@ export const BranchStatistics= [
     }
 ]
 export const TotalSummary= {
-    "TotalBranches": 1,
     "TotalVehicles": 15,
-    "TotalRevenue": 83793.38,
     "TotalRentalFrequency": 37,
-    "TotalExpenses": 54711.46
 }
-

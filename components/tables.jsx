@@ -3,24 +3,21 @@ import React, { useState } from 'react';
 import { IoIosMore } from "react-icons/io";
 
 export const RentalRows = ({ rentalData  }) => {
-    const generateRandomCarName = () => {
       const carNames = ['Toyota', 'Honda', 'Ford', 'Chevrolet', 'Nissan'];
-      return carNames[Math.floor(Math.random() * carNames.length)];
-    };
   
     return (
-      <div className="relative shadow-md sm:rounded-lg">
-        <h1 className='text-lg py-3'>Most Rented Cars</h1>
+      <div className="relative">
+        <h1 className='text-sm py-3'>Most Rented Cars</h1>
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
           <thead className="text-xs  text-blue-900 uppercase bg-gray-50 ">
             <tr >
-              <th scope="col" className="px-4 py-3">
+              <th scope="col" className="px-2 py-3">
                 Plate Number
               </th>
-              <th scope="col" className="px-4 py-3">
+              <th scope="col" className="px-2 py-3">
                 Car Name
               </th>
-              <th scope="col" className="px-4 py-3">
+              <th scope="col" className="px-2 py-3">
                 Frequency
               </th>
             </tr>
@@ -32,7 +29,7 @@ export const RentalRows = ({ rentalData  }) => {
                   {car.PlateNumber}
                 </td>
                 <td className="px-4 py-4">
-                  {car.carName ? car.carName : generateRandomCarName()}
+                  {carNames[index]}
                 </td>
                 <td className="px-4 py-4 flex justify-center">
                   {car.RentalFrequency}
