@@ -44,7 +44,7 @@ export const RentalRows = ({ rentalData  }) => {
 
 export const StaticTable = ({ data ,tableTh}) => {
   return (
-    <div className="flex flex-col h-[50dvh] overflow-y-scroll overflow-x-hidden">
+    <div className="flex flex-col h-[55dvh] overflow-y-scroll overflow-x-hidden">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
           <div className="overflow-hidden">
@@ -81,7 +81,7 @@ export const StaticTable = ({ data ,tableTh}) => {
 };
 export const DaynamicTable = ({ data }) => {
   return (
-    <div className="flex flex-col h-[22rem] overflow-y-scroll overflow-x-hidden">
+    <div className="flex flex-col h-[55dvh] overflow-y-scroll overflow-x-hidden">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
           <div className="overflow-hidden">
@@ -129,7 +129,7 @@ export const CollabsedTable = ({ data }) => {
   const tableHeaders = Object.keys(data[0]).slice(0, 6); // Displaying only the first 6 headers
 
   return (
-    <div className="flex flex-col h-[22rem] overflow-y-scroll overflow-x-hidden">
+    <div className="flex flex-col h-[55dvh] overflow-y-scroll overflow-x-hidden">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
           <div className="overflow-hidden">
@@ -151,8 +151,12 @@ export const CollabsedTable = ({ data }) => {
                       onClick={() => toggleRow(index)}
                     >
                       {tableHeaders.map((header, i) => (
-                        <td key={i} className="whitespace-nowrap px-6 py-4 font-medium">
-                          {item[header]}
+                        <td  key={i} className="whitespace-nowrap px-6 py-4 font-medium">
+                          {item[header] === "open" ? (
+                            <span className='bg-green-500 text-white p-2 rounded-full'>{item[header]}</span>
+                          ):(
+                           item[header]
+                          )}
                         </td>
                       ))}
                       <td className="whitespace-nowrap px-6 py-4 cursor-pointer">

@@ -8,6 +8,7 @@ import Maintenance from '@/app/pages/maintenance.jsx';
 import Treasury from '@/app/pages/treasury.jsx';
 import { useSearchParams } from 'next/navigation';
 
+
 const PageRenderer = () => {
   const pageName = useSearchParams().get('p')
   const getPageComponent = () => {
@@ -37,5 +38,6 @@ const PageRenderer = () => {
       </section>
   );
 };
+
 
 export default PageRenderer;
