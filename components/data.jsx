@@ -93,7 +93,7 @@ export const Doughnut = () => {
         chartInstance.current.destroy();
       }
     };
-  }, [TotalRevenue, TotalExpenses]);
+  }, [TotalSummary]);
 
   return (
     <div className="h-60 w-[40%]">
@@ -177,8 +177,8 @@ export const TotalSummaryChart = () => {
             label: 'Total Summary',
             data: [TotalSummary.TotalVehicles, TotalSummary.TotalRentalFrequency],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.6)', // Color for Total Vehicles
-              'rgba(54, 162, 235, 0.6)', // Color for Total Rental Frequency
+              '#F99C30', // Color for Total Vehicles
+              '#6463D6', // Color for Total Rental Frequency
             ],
             borderWidth: 1,
           },

@@ -152,11 +152,11 @@ export const CollabsedTable = ({ data }) => {
                     >
                       {tableHeaders.map((header, i) => (
                         <td  key={i} className="whitespace-nowrap px-6 py-4 font-medium">
-                          {item[header] === "open" ? (
-                            <span className='bg-green-500 text-white p-2 rounded-full'>{item[header]}</span>
-                          ):(
-                           item[header]
-                          )}
+                        {(item[header] === "open" || item[header] === "Active") ? (
+                          <span className='bg-green-300 text-green-600 font-bold px-4 py-2 rounded-full'>{item[header]}</span>
+                        ) : (
+                          item[header]
+                        )}
                         </td>
                       ))}
                       <td className="whitespace-nowrap px-6 py-4 cursor-pointer">

@@ -17,8 +17,7 @@ export default  function Dashboard (){
         <TotalSummaryChart />
       </div>
       <RentalRows rentalData={RentalExport} />
-      <div className="w-[40%]">
-        <h1 className="text-center text-xl text-[#666666]">orders</h1>
+      <div className="w-[30%] h-full">
         <LineChart />
       </div>
       </div>

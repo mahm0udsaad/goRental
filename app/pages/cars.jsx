@@ -1,4 +1,4 @@
-import { StaticTable } from "@/components/tables";
+import { CollabsedTable, StaticTable } from "@/components/tables";
 import { Cards } from "@/components/cards";
 import { ActionBtns } from "@/components/actionBtns";
 
@@ -82,7 +82,7 @@ export default function Cars (){
       ))}
       </div>
       <ActionBtns />
-      <StaticTable tableTh={tableThData} data={dataArray} />
+      <CollabsedTable data={dataArray} />
       </div>
   )
 }

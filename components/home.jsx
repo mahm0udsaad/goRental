@@ -22,10 +22,10 @@ export default function HomePage() {
                 </Link>
                 </div>
             </div>
-            <div className="hero-shadow sm:w-[50%] max-md:w-full ">
+            <div className="sm:w-[50%] max-md:w-full ">
                 <img
                 loading="lazy"
-                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/d1b43922-1dce-468c-bdf3-c484b8deb6cb?apiKey=00dd475291cf4f1da724421e257168ca&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/d1b43922-1dce-468c-bdf3-c484b8deb6cb?apiKey=00dd475291cf4f1da724421e257168ca&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/d1b43922-1dce-468c-bdf3-c484b8deb6cb?apiKey=00dd475291cf4f1da724421e257168ca&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/d1b43922-1dce-468c-bdf3-c484b8deb6cb?apiKey=00dd475291cf4f1da724421e257168ca&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/d1b43922-1dce-468c-bdf3-c484b8deb6cb?apiKey=00dd475291cf4f1da724421e257168ca&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/d1b43922-1dce-468c-bdf3-c484b8deb6cb?apiKey=00dd475291cf4f1da724421e257168ca&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/d1b43922-1dce-468c-bdf3-c484b8deb6cb?apiKey=00dd475291cf4f1da724421e257168ca&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/d1b43922-1dce-468c-bdf3-c484b8deb6cb?apiKey=00dd475291cf4f1da724421e257168ca&"
+                src="/Treasury.png"
                 className="aspect-[1.44] object-contain object-center w-full overflow-hidden grow max-md:max-w-full"
                 />
             </div>
