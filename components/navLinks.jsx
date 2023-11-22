@@ -3,17 +3,19 @@ import { IoCarSportOutline } from "react-icons/io5";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { PiMoneyDuotone } from "react-icons/pi";
 import { FaRegUserCircle } from "react-icons/fa";
+import { GrVmMaintenance } from "react-icons/gr";
+import { LiaFileInvoiceSolid } from "react-icons/lia";
 import { HiOutlineDocumentChartBar } from "react-icons/hi2";
 import { useRouter, useSearchParams } from 'next/navigation';
 
 const navItems = [
   { text: 'Dashboard', link: '/dashboard', icon: <LuLayoutDashboard /> },
   { text: 'Cars', link: '/cars', icon: <IoCarSportOutline /> },
-  { text: 'Treasury', link: '/treasury', icon: <PiMoneyDuotone /> },
   { text: 'Customers', link: '/customers', icon: <FaRegUserCircle /> },
   { text: 'Contracts', link: '/contracts', icon: <HiOutlineDocumentChartBar />},
-  { text: 'Invoices', link: '/invoices', icon: <HiOutlineDocumentChartBar />},
-  { text: 'Maintenance', link: '/maintenance', icon: <HiOutlineDocumentChartBar />},
+  { text: 'Treasury', link: '/treasury', icon: <PiMoneyDuotone /> },
+  { text: 'Invoices', link: '/invoices', icon: <LiaFileInvoiceSolid />},
+  { text: 'Maintenance', link: '/maintenance', icon: <GrVmMaintenance />},
 ];
 const NavLinks = () => {
     const router = useRouter();
