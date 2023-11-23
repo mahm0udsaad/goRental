@@ -547,16 +547,14 @@ export const RentalExport = [
     "RentalFrequency": 4
     },
 ]
-export const BranchStatistics= [
-    {
+export const BranchStatistics=  {
     "Branch": "الفرع الرئيسي",
     "City": "خميس مشيط‎",
     "NumberOfBranchVehicles": 15,
     "RentalFrequency": 37,
     "Revenue": 83793.38,
     "Expenses": 54711.46
-    }
-]
+}
 export const TotalSummary= {
     "TotalBranches": 1,
     "TotalVehicles": 15,
@@ -564,3 +562,83 @@ export const TotalSummary= {
     "TotalRentalFrequency": 37,
     "TotalExpenses": 54711.46
 }
+export const Invoices = [
+    {
+      "id": "INV001",
+      "date": "2023-11-01",
+      "customer": "محمد أحمد",
+      "price": 150.00,
+      "debt": 100.00,
+      "paid": 200.00,
+      "total": 300.00,
+      "amount": 2,
+      "description": "إيجار سيارة كيا 2022 لمدة يومين",
+      "addtax": true
+    },
+    {
+      "id": "INV002",
+      "date": "2023-10-15",
+      "customer": "فاطمة علي",
+      "price": 49.99,
+      "debt": 0.00,
+      "paid": 49.99,
+      "total": 49.99,
+      "amount": 1,
+      "description": "إيجار سيارة هونداي 2023 لمدة يوم واحد",
+      "addtax": false
+    },
+    {
+      "id": "INV003",
+      "date": "2023-11-05",
+      "customer": "ليلى حسين",
+      "price": 75.50,
+      "debt": 127.50,
+      "paid": 250.00,
+      "total": 377.50,
+      "amount": 5,
+      "description": "إيجار سيارة تويوتا 2022 لمدة خمسة أيام",
+      "addtax": true
+    },
+    {
+      "id": "INV004",
+      "date": "2023-10-20",
+      "customer": "عبد الرحمن محمود",
+      "price": 99.00,
+      "debt": 0.00,
+      "paid": 297.00,
+      "total": 297.00,
+      "amount": 3,
+      "description": "إيجار سيارة فورد 2023 لمدة ثلاثة أيام",
+      "addtax": true
+    },
+    {
+      "id": "INV005",
+      "date": "2023-11-10",
+      "customer": "نورة سعيد",
+      "price": 19.99,
+      "debt": 9.99,
+      "paid": 10.00,
+      "total": 19.99,
+      "amount": 1,
+      "description": "إيجار سيارة شيفروليه 2023 لمدة يوم واحد",
+      "addtax": false
+    }
+]
+
+export const overview = [
+    {
+      title: "Total Invoices",
+      number: 5,
+    },
+    {
+      title: "Total Revenue",
+      number: 747.48,
+      color:'green'
+    },
+    {
+      title: "Total Debt",
+      number: 237.48,
+      color:'red'
+    }
+  ];
+  

@@ -15,7 +15,7 @@ export default function Cars (){
     <h1>Cars</h1>
     <div className="relative flex w-full gap-4 justify-around py-4">
       {cards.map((card , i )=> (
-        <Cards card={card} key={i}/>
+        <Cards card={card} i={i} key={i}/>
       ))}
       </div>
       <ActionBtns />

@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.27.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.18",
     "@preact/signals-core": "^1.5.0",
     "chart.js": "^4.4.0",
     "next": "14.0.3",

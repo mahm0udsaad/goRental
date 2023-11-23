@@ -32,6 +32,9 @@ body{
   background-color: #253665;
   height: 100dvh;
 }
+.main-color{
+    color: #253665;
+}
 .btn :hover{
   background-color: #9b9b9b69;
 }
