@@ -1,23 +1,18 @@
 import React, { useState } from 'react';
-import { Dialog, TextField, Button, Snackbar, Grid } from '@mui/material';
+import { Dialog, TextField, Button, Snackbar, Grid , InputLabel, Select, MenuItem } from '@mui/material';
 import { FaRegCheckCircle } from 'react-icons/fa';
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
-const MyFormModal = ({isOpen, setIsOpen}) => {
-  const [formData, setFormData] = useState({
-    id: '',
-    date: '',
-    customer: '',
-    amount: '',
-    description: '',
-    price: '',
-    total: '',
-    paid: '',
-    debt: '',
-    addtax: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
+const MyFormModal = ({isOpen, setIsOpen, formData, setFormData , formTitle}) => {
 
+  const [submitted, setSubmitted] = useState(false);
+  const maintenanceTypes = [
+    'غيار زيت',
+    'غيار إطارات',
+    'بنشر',
+    'تعبئة وقود',
+    'اخري',
+  ];
   const handleSubmit = (e) => {
     e.preventDefault();
     // Your form submission logic here
@@ -54,18 +49,44 @@ const MyFormModal = ({isOpen, setIsOpen}) => {
   };
 
   const renderFormInputs = () => {
-    return Object.keys(formData).map((key) => (
-        <Grid item xs={12} sm={6} key={key}>
-        <TextField
-          label={key}
-          value={formData[key]}
-          onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
-          variant="outlined"
-          fullWidth
-        />
-      </Grid>
-    ));
+    return Object.keys(formData).map((key) => {
+      if (key === 'maintenanceType') {
+        return (
+          <Grid item xs={12} sm={6} key={key}>
+            <Select
+            value={formData[key] || ''} // Set empty string as default value for placeholder
+            onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
+            fullWidth
+            variant="outlined"
+            displayEmpty // Allows an empty item to be displayed
+          >
+            <MenuItem value="" disabled>
+              Select {key}
+            </MenuItem>
+            {maintenanceTypes.map((type, index) => (
+              <MenuItem key={index} value={type}>
+                {type}
+              </MenuItem>
+            ))}
+          </Select>
+          </Grid>
+        );
+      } else {
+        return (
+          <Grid item xs={12} sm={6} key={key}>
+            <TextField
+              label={key}
+              value={formData[key]}
+              onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
+              variant="outlined"
+              fullWidth
+            />
+          </Grid>
+        );
+      }
+    });
   };
+  
 
   const clearInputs = () => {
     setFormData({
@@ -101,13 +122,17 @@ const MyFormModal = ({isOpen, setIsOpen}) => {
       maxWidth="md" // Adjust as needed
       PaperProps={{ style: { width: '90%', maxHeight: '90vh', overflowY: 'auto' } }}
     >
+      <div className="flex justify-between items-center">
+      <h1 className='p-4 text-xl font-semibold'>{formTitle}</h1>
         <button
           onClick={() => setIsOpen(false)}
-          className="mt-3 mx-3 text-xl  flex justify-center items-center self-end"
+          className="m-4 text-xl  flex justify-center items-center self-end"
           style={{ borderRadius: '50%', width: '40px', height: '40px', minWidth: 'auto' }}
         >
         <IoIosCloseCircleOutline className='text-rose-800' />
         </button>
+
+      </div>
       {displaySuccessMessage()}
       <form onSubmit={handleSubmit} className="p-4">
         <Grid container spacing={2} className='pb-8'>

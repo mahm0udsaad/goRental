@@ -642,3 +642,93 @@ export const overview = [
     }
   ];
   
+  export const maintenanceData = [
+    {
+      id:1,
+      plateNumber: '2468 و س 5',
+      maintenanceType: 'تعبئة وقود',
+      client: 'ياسمين سعيد',
+      date: '20/07/2023',
+      cost: 300.00,
+      Description: 'تعبئة وقود',
+    },
+    {
+      id:2,
+      plateNumber: '1357 ط ح 8',
+      maintenanceType: 'بنشر',
+      client: 'أحمد مصطفى',
+      date: '07/06/2023',
+      cost: 450.00,
+      Description: 'بنشر',
+    },
+    {
+      id:3,
+      plateNumber: '9870 ك س 2',
+      maintenanceType: 'غيار زيت',
+      client: 'سارة العوضي',
+      date: '12/05/2023',
+      cost: 380.00,
+      Description: 'غيار زيت',
+    },
+    {
+      id:4,
+      plateNumber: '3210 د ب 6',
+      maintenanceType: 'غيار إطارات',
+      client: 'نور عبدالله',
+      date: '28/04/2023',
+      cost: 320.00,
+      Description: 'غيار إطارات',
+    },
+    {
+      id:5,
+      plateNumber: '7890 ر س 3',
+      maintenanceType: 'غيار زيت',
+      client: 'علي العويس',
+      date: '15/03/2023',
+      cost: 500.00,
+      Description: 'غيار زيت',
+    },
+    {
+      id:6,
+      plateNumber: '6543 ف ح 4',
+      maintenanceType: 'تعبئة وقود',
+      client: 'لمى المنصور',
+      date: '22/02/2023',
+      cost: 400.00,
+      Description: 'تعبئة وقود',
+    },
+    {
+      id:7,
+      plateNumber: '4321 ب ن 7',
+      maintenanceType: 'اخري',
+      client: 'محمود خالد',
+      date: '07/01/2023',
+      cost: 350.00,
+      Description: 'اخري',
+    },
+    {
+      id:8,
+      plateNumber: '8765 ق ر 2',
+      maintenanceType: 'غيار إطارات',
+      client: 'ريم الصالح',
+      date: '12/12/2022',
+      cost: 300.00,
+      Description: 'غيار إطارات',
+    },
+  ];
+  
+  const maintenanceTypes = {};
+maintenanceData.forEach((data) => {
+  const { maintenanceType, cost } = data;
+  if (!maintenanceTypes[maintenanceType]) {
+    maintenanceTypes[maintenanceType] = cost;
+  } else {
+    maintenanceTypes[maintenanceType] += cost;
+  }
+});
+
+// Converting the calculated totals into an array of objects
+export const maintenanceOverview = Object.entries(maintenanceTypes).map(([title, number]) => ({
+  title,
+  number,
+}));

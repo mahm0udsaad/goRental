@@ -129,7 +129,7 @@ export const CollabsedTable = ({ data }) => {
   const tableHeaders = Object.keys(data[0]).slice(0, 6); // Displaying only the first 6 headers
 
   return (
-    <div className="flex flex-col h-[55dvh] overflow-y-scroll overflow-x-hidden">
+    <div className="flex flex-col h-[55dvh] overflow-y-scroll overflow-x-hidden ">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
           <div className="overflow-hidden">
