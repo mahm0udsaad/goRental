@@ -55,7 +55,7 @@ export const CollabsedTable = ({ data }) => {
     setExpandedRows(updatedExpandedRows);
   };
 
-  const tableHeaders = Object.keys(data[0]).slice(0, 6); // Displaying only the first 6 headers
+  const tableHeaders = Object.keys(data[0]).slice(0, 7); // Displaying only the first 6 headers
   const getColorClass = (status) => {
     if (status === 'Rented') {
       return 'bg-orange-300 text-orange-600 font-bold';
@@ -74,8 +74,9 @@ export const CollabsedTable = ({ data }) => {
               <thead className="border-b font-medium dark:border-neutral-500">
                 <tr>
                   {tableHeaders.map((item, i) => (
+                    
                     <th key={i} scope="col" className="px-6 py-4">
-                      {item}
+                      {item.replace(/([a-z])([A-Z])/g, '$1 $2') .replace(/_/g, ' ').toLowerCase()}
                     </th>
                   ))}
                 </tr>
@@ -92,9 +93,6 @@ export const CollabsedTable = ({ data }) => {
                           <span className={getColorClass(item[header]) + ' px-4 py-2 rounded-full'}>{item[header]}</span>
                         </td>
                       ))}
-                      <td className="whitespace-nowrap px-6 py-4 cursor-pointer">
-                        <IoIosMore />
-                      </td>
                     </tr>
                     {expandedRows.includes(index) && (
                     <tr className="bg-gray-100">
@@ -106,7 +104,7 @@ export const CollabsedTable = ({ data }) => {
                             .slice(6) // Displaying items after the first 6
                             .map(([key, value], idx) => (
                               <div key={idx} className="flex py-1">
-                                <div className="w-1/2 font-bold">{key}:</div>
+                                <div className="w-1/2 font-bold">{key.replace(/([a-z])([A-Z])/g, '$1 $2') .replace(/_/g, ' ').toLowerCase()}:</div>
                                 <div className="w-1/2">{value}</div>
                               </div>
                             ))}

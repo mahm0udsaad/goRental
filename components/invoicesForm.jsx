@@ -50,11 +50,17 @@ const MyFormModal = ({isOpen, setIsOpen, formData, setFormData , formTitle}) => 
 
   const renderFormInputs = () => {
     return Object.keys(formData).map((key) => {
+      const formattedKey = key
+      .replace(/([a-z])([A-Z])/g, '$1 $2') 
+      .replace(/_/g, ' ') 
+      .toLowerCase(); 
+
       if (key === 'maintenanceType') {
         return (
           <Grid item xs={12} sm={6} key={key}>
             <Select
-            value={formData[key] || ''} // Set empty string as default value for placeholder
+            label={formattedKey}
+            value={formData[key]} 
             onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
             fullWidth
             variant="outlined"
@@ -75,7 +81,7 @@ const MyFormModal = ({isOpen, setIsOpen, formData, setFormData , formTitle}) => 
         return (
           <Grid item xs={12} sm={6} key={key}>
             <TextField
-              label={key}
+              label={formattedKey}
               value={formData[key]}
               onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
               variant="outlined"
@@ -116,7 +122,7 @@ const MyFormModal = ({isOpen, setIsOpen, formData, setFormData , formTitle}) => 
       <h1 className='p-4 text-xl font-semibold'>{formTitle}</h1>
         <button
           onClick={() => setIsOpen(false)}
-          className="m-4 text-xl  flex justify-center items-center self-end"
+          className="m-4 text-3xl  flex justify-center items-center self-end"
           style={{ borderRadius: '50%', width: '40px', height: '40px', minWidth: 'auto' }}
         >
         <IoIosCloseCircleOutline className='text-rose-800' />

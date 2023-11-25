@@ -6,25 +6,36 @@ import { ActionBtns } from "@/components/actionBtns";
 import { useState } from "react";
 
 const cards = [
-  {title:'Total Customers',number: `120`, color:'black'},
-  {title:'Active Customers',number: `70`, color:'#ff8f00'},
-  {title:'Inactive Customers',number: `50`, color:'green'},
+  {title:'Total Customers',number: `120`},
+  {title:'Active Customers',number: `70`, color:'green'},
+  {title:'Inactive Customers',number: `50`, color:'#ff8f00'},
 ]
 export default function Customers (){
+  const newCustomerNumber = CustomersData[CustomersData.length - 1].id + 1;
   const [formData , setFormData ] = useState({
-    FullName: "",
-    Category: "",
-    IDNumber: "",
-    IDExpirationDate: "",
-    Mobile: "",
-    Debt: 0.00
+      customerNumber: newCustomerNumber,
+      customerName: '',
+      idOrResidenceCard: '',
+      idCardDate: '',
+      placeOfIssueIDCard: '',
+      nationality: '',
+      driversLicenseNumber: '',
+      licenseExpiryDate: '',
+      placeOfIssueLicense: '',
+      dateOfBirth: '',
+      placeOfBirth: '',
+      mobileNumber: '',
+      homePhone: '',
+      workPhone: '',
+      homeAddress: '',
+      workAddress: ''
   })
   return (
     <div className="">
     <h1>Customers</h1>
     <div className="relative flex w-full gap-4 justify-around py-4">
       {cards.map((card , i )=> (
-        <Cards card={card} key={i}/>
+        <Cards card={card} i={i} key={i}/>
       ))}
       </div>
       <ActionBtns formTitle={"New Customer"} data={CustomersData} fileName={"Customers"} formData={formData} setFormData={setFormData} />

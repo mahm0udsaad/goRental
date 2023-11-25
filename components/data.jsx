@@ -177,8 +177,8 @@ export const TotalSummaryChart = () => {
             label: 'Total Summary',
             data: [TotalSummary.TotalVehicles, TotalSummary.TotalRentalFrequency],
             backgroundColor: [
-              '#F99C30', // Color for Total Vehicles
-              '#6463D6', // Color for Total Rental Frequency
+              '#F99C30',
+              '#6463D6', 
             ],
             borderWidth: 1,
           },

@@ -12,8 +12,6 @@ export default function Cars (){
       Brand: "",
       VehicleType: "",
       Meter: 0,
-      RentalCount: 0,
-      Transmission: "",
       ManufactureYear: 0,
       Color: "",
       ExtraHourPrice: 0.00,
