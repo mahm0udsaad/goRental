@@ -4,12 +4,10 @@ import { ActionBtns } from "@/components/actionBtns";
 import { Cards } from "@/components/cards";
 import { CollabsedTable } from "@/components/tables";
 import { Invoices as InvoicesData, overview  } from "@/data/info";
-import InvoiceFormModal from "@/components/invoicesForm";
 import { useState } from "react";
 import { formatDate } from "@/helper/dateNow";
 
 export default  function Invoices (){
-  const [addNew , setAddNew ] = useState(false)
   const [formData, setFormData] = useState({
     id: '',
     date: formatDate(),
@@ -31,11 +29,8 @@ export default  function Invoices (){
         <Cards card={card} i={i} key={i}/>
       ))}
       </div>
-      <ActionBtns handleOpenForm={()=> setAddNew(true)} />
+      <ActionBtns formTitle={"New Invoice"} data={InvoicesData} fileName={"Invoices"} formData={formData} setFormData={setFormData} />
       <CollabsedTable data={InvoicesData} />
-      {addNew && (
-        <InvoiceFormModal formData={formData} setFormData={setFormData} isOpen={addNew} setIsOpen={setAddNew} />
-      )}
       </div>
   )
 }

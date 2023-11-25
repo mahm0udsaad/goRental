@@ -15,7 +15,7 @@ export default function Treasury (){
         <Cards card={card} key={i}/>
       ))}
       </div>
-      <ActionBtns />
+      <ActionBtns noAdd={true} data={Transactions } fileName={"Transactions"} />
       <CollabsedTable data={Transactions } />
       </div>
   )

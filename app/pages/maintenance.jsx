@@ -8,7 +8,6 @@ import { useState } from "react";
 import { formatDate } from "@/helper/dateNow";
 
 export default function Maintenance (){
-  const [addNew , setAddNew ] = useState(false)
   const [formData, setFormData] = useState({
     plate: '',
     amount: '',
@@ -26,11 +25,8 @@ export default function Maintenance (){
         <Cards card={card} key={i}/>
       ))}
       </div>
-      <ActionBtns data={maintenanceData} fileName={'maintenance'} handleOpenForm={()=> setAddNew(true)} />
+      <ActionBtns formTitle={"Maintanance Card"} data={maintenanceData} fileName={'maintenance'} formData={formData} setFormData={setFormData}/>
       <CollabsedTable data={maintenanceData} />
-      {addNew && (
-        <InvoiceFormModal formTitle={'Maintainance Card'} formData={formData} setFormData={setFormData} isOpen={addNew} setIsOpen={setAddNew} />
-      )}
       </div>
   )
 }

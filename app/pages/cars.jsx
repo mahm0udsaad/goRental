@@ -1,24 +1,40 @@
+"use client"
 import { CollabsedTable, StaticTable } from "@/components/tables";
 import { Cards } from "@/components/cards";
 import { ActionBtns } from "@/components/actionBtns";
-import { VehicleDetails } from "@/data/info";
+import { CarsOverview, VehicleDetails } from "@/data/info";
+import { useState } from "react";
 
-const cards = [
-  {title:'Total Cars',number: `120` , color:'black'},
-  {title:'Rented Cars',number: `70`, color:'#ff8f00'},
-  {title:'Available Cars',number: `50` , color:'green'},
-]
 
 export default function Cars (){
+  const [formData, setFormData] = useState({
+      Plate: "",
+      Brand: "",
+      VehicleType: "",
+      Meter: 0,
+      RentalCount: 0,
+      Transmission: "",
+      ManufactureYear: 0,
+      Color: "",
+      ExtraHourPrice: 0.00,
+      DailyRent: 0.00,
+      WeeklyRent: 0.00,
+      MonthlyRent: 0.00,
+      InsuranceCompany: "",
+      RegistrationType: "",
+      FuelType: "",
+      ExtraKilometerPrice: 0.00,
+      DailyKilometerLimit: 0.00
+  });
   return (
     <div className="">
     <h1>Cars</h1>
     <div className="relative flex w-full gap-4 justify-around py-4">
-      {cards.map((card , i )=> (
+      {CarsOverview.map((card , i )=> (
         <Cards card={card} i={i} key={i}/>
       ))}
       </div>
-      <ActionBtns />
+      <ActionBtns formTitle={"New Car"} data={VehicleDetails} fileName={'Cars'} formData={formData} setFormData={setFormData} />
       <CollabsedTable data={VehicleDetails} />
       </div>
   )

@@ -1,25 +1,24 @@
+"use client"
 import { Cards } from "@/components/cards"
 import { Customers as CustomersData } from "@/data/info"
-import { DaynamicTable } from "@/components/tables";
-import { CiExport } from "react-icons/ci";
-import { LuFilter } from "react-icons/lu";
-import { IoIosAdd } from "react-icons/io";
+import { CollabsedTable, DaynamicTable } from "@/components/tables";
 import { ActionBtns } from "@/components/actionBtns";
+import { useState } from "react";
 
 const cards = [
   {title:'Total Customers',number: `120`, color:'black'},
   {title:'Active Customers',number: `70`, color:'#ff8f00'},
   {title:'Inactive Customers',number: `50`, color:'green'},
 ]
-const tableThData = [
-  "ID",
-  "AMOUNT",
-  "VEHICLE",
-  "PLATE NUMBER",
-  "CUSTOMER",
-  "DATE",
-  ]
 export default function Customers (){
+  const [formData , setFormData ] = useState({
+    FullName: "",
+    Category: "",
+    IDNumber: "",
+    IDExpirationDate: "",
+    Mobile: "",
+    Debt: 0.00
+  })
   return (
     <div className="">
     <h1>Customers</h1>
@@ -28,8 +27,8 @@ export default function Customers (){
         <Cards card={card} key={i}/>
       ))}
       </div>
-      <ActionBtns />
-      <DaynamicTable data={CustomersData} />
+      <ActionBtns formTitle={"New Customer"} data={CustomersData} fileName={"Customers"} formData={formData} setFormData={setFormData} />
+      <CollabsedTable data={CustomersData} />
       </div>
   )
 }

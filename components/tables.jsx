@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { IoIosMore } from "react-icons/io";
 
 export const RentalRows = ({ rentalData  }) => {
-      const carNames = ['Toyota', 'Honda', 'Ford', 'Chevrolet', 'Nissan'];
+    const carNames = ['Toyota', 'Honda', 'Ford', 'Chevrolet', 'Nissan'];
   
     return (
       <div className="relative">
@@ -42,77 +42,6 @@ export const RentalRows = ({ rentalData  }) => {
     );
 };
 
-export const StaticTable = ({ data ,tableTh}) => {
-  return (
-    <div className="flex flex-col h-[55dvh] overflow-y-scroll overflow-x-hidden">
-      <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-          <div className="overflow-hidden">
-            <table className="min-w-full text-left text-sm font-light">
-              <thead className="border-b font-medium dark:border-neutral-500">
-                <tr>
-                  {tableTh && tableTh.map((item , i )=>(
-                    <th key={i} scope="col" className="px-6 py-4">{item}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((item, index) => (
-                  <tr
-                    key={index}
-                    className="border-b transition duration-300 ease-in-out hover:bg-[#253665] hover:text-white"
-                  >
-                    <td className="whitespace-nowrap px-6 py-4 font-medium">{item.ID}</td>
-                    <td className="whitespace-nowrap px-6 py-4">{item.AMOUNT}</td>
-                    <td className="whitespace-nowrap px-6 py-4">{item.VEHICLE}</td>
-                    <td className="whitespace-nowrap px-6 py-4">{item.PLATE_NUMBER}</td>
-                    <td className="whitespace-nowrap px-6 py-4">{item.CUSTOMER}</td>
-                    <td className="whitespace-nowrap px-6 py-4">{item.DATE}</td>
-                    <td className="whitespace-nowrap px-6 py-4 cursor-pointer"><IoIosMore /></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-export const DaynamicTable = ({ data }) => {
-  return (
-    <div className="flex flex-col h-[55dvh] overflow-y-scroll overflow-x-hidden">
-      <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-          <div className="overflow-hidden">
-            <table className="min-w-full text-left text-sm font-light">
-              <thead className="border-b font-medium dark:border-neutral-500">
-                <tr>
-                  {Object.keys(data[0]).map((item , i )=>(
-                    <th key={i} scope="col" className="px-6 py-4">{item}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((item, index) => (
-                  <tr
-                    key={index}
-                    className="border-b transition duration-300 ease-in-out hover:bg-[#253665] hover:text-white"
-                  >
-                    {item && Object.values(item).map((tdItem , i )=>(
-                      <td key={i} className="whitespace-nowrap px-6 py-4 font-medium">{tdItem}</td>
-                    ))}
-                    <td className="whitespace-nowrap px-6 py-4 cursor-pointer"><IoIosMore /></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 export const CollabsedTable = ({ data }) => {
   const [expandedRows, setExpandedRows] = useState([]);
 
@@ -127,7 +56,15 @@ export const CollabsedTable = ({ data }) => {
   };
 
   const tableHeaders = Object.keys(data[0]).slice(0, 6); // Displaying only the first 6 headers
-
+  const getColorClass = (status) => {
+    if (status === 'Rented') {
+      return 'bg-orange-300 text-orange-600 font-bold';
+    } else if (status === 'open' || status === 'Active' || status === 'available') {
+      return 'bg-green-300 text-green-600 font-bold';
+    }
+    // If none of the conditions are met, return an empty string or other default class
+    return '';
+  };
   return (
     <div className="flex flex-col h-[55dvh] overflow-y-scroll overflow-x-hidden ">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -151,12 +88,8 @@ export const CollabsedTable = ({ data }) => {
                       onClick={() => toggleRow(index)}
                     >
                       {tableHeaders.map((header, i) => (
-                        <td  key={i} className="whitespace-nowrap px-6 py-4 font-medium">
-                        {(item[header] === "open" || item[header] === "Active") ? (
-                          <span className='bg-green-300 text-green-600 font-bold px-4 py-2 rounded-full'>{item[header]}</span>
-                        ) : (
-                          item[header]
-                        )}
+                        <td  key={i} className="whitespace-nowrap px-6 py-4 font-medium ">
+                          <span className={getColorClass(item[header]) + ' px-4 py-2 rounded-full'}>{item[header]}</span>
                         </td>
                       ))}
                       <td className="whitespace-nowrap px-6 py-4 cursor-pointer">

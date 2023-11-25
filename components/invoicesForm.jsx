@@ -105,16 +105,6 @@ const MyFormModal = ({isOpen, setIsOpen, formData, setFormData , formTitle}) => 
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => {
-          setIsOpen(true);
-          setSubmitted(false); // Reset submitted status on modal open
-        }}
-      >
-        Open Modal
-      </Button>
       <Dialog
       open={isOpen}
       onClose={() => setIsOpen(false)}
